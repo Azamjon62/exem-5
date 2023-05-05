@@ -1,0 +1,206 @@
+.basket
+{
+    &__section
+    {
+        &__title
+        {
+            margin-top: 30px;
+            p
+            {
+                font-weight: 600;
+                font-size: 20px;
+                color: #1C1C27;
+            }
+
+        }
+
+        &__flex
+        {
+            display: flex;
+            justify-content: space-between;
+
+            &__wrapper
+            {
+                display: flex;
+                flex-direction: column;
+
+                &__card1
+                {
+                    margin-top: 13px;
+                    display: flex;
+                    flex-direction: column;
+                    background: #FFFFFF;
+                    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+                    border-radius: 30px;
+                    width: 633px;
+                    height: 218px;
+                    padding: 16px;
+
+                    &__flex
+                    {
+                        display: flex;
+                        align-items: center;
+                        gap: 23.44px;
+
+                        .bask-img
+                        {
+                            width: 146.53px !important;
+                            height: 136px !important;
+                        }
+
+                        &__text
+                        {
+                            display: flex;
+                            gap: 12px;
+                            flex-direction: column;
+
+                            .h3
+                            {
+                                font-weight: 500;
+                                font-size: 17px;
+                                color: #1C1C27;
+                            }
+
+                            .p-price
+                            {
+                                font-weight: 600;
+                                font-size: 15px;
+                                color: #AAAAAA;
+                            }
+                        }
+                    }
+
+
+                    &__count
+                    {
+                        padding: 0 5px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        &__flex
+                        {
+                            margin-top: 17px;
+                            display: flex;
+                            align-items: center;
+                            gap: 23.44px;
+
+                            span
+                            {
+                                cursor: pointer;
+                            }
+                        }
+
+                        .to-price
+                        {
+                            font-weight: 600;
+                            font-size: 15px;
+                            color: #1C1C27;
+                        }
+
+                    }
+
+
+                }
+
+                // ------------------------------------------------------------------
+
+                &__card2
+                {
+                    margin-top: 13px;
+                    background: #FFFFFF;
+                    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+                    border-radius: 30px;
+                    width: 633px;
+                    height: 288px;
+
+                    &__title
+                    {
+                        padding: 15px 0 17px 22.27px;
+
+                        p
+                        {
+                            font-weight: 600;
+                            font-size: 20px;
+                            line-height: 24px;
+                            color: #000000;
+                        }
+                    }
+
+                    &__img
+                    {
+                        padding: 0 0 0 29px;
+                    }
+
+                    &__ordering
+                    {
+                        padding: 18px 26px 0 29px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        &__flex
+                        {
+                            display: flex;
+                            gap: 11.72px;
+
+                            p
+                            {
+                                font-weight: 500;
+                                font-size: 15px;
+                                color: #000000;
+                            }
+                        }
+
+                        .or-price
+                        {
+                            font-weight: 600;
+                            font-size: 15px;
+                            color: #1C1C27;
+                        }
+                    }
+                }
+            }
+
+
+            &__total
+            {
+                margin-top: 13px;
+                background: #FFFFFF;
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+                border-radius: 30px;
+                height: 114px;
+                width: 348.93px;
+
+                &__flex
+                {
+                    padding: 21px 16.33px 15px 21.43px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    p
+                    {
+                        font-weight: 600;
+                        font-size: 15px;
+                        color: #000000;
+                    }
+                }
+
+                &-btn
+                {
+                    cursor: pointer;
+                    padding: 22px 0px;
+                    width: 348.98px;
+                    background: #101010;
+                    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+                    border-radius: 20px;
+                    border: none;
+                    font-weight: 600;
+                    font-size: 17px;
+                    color: #FFFFFF;
+                }
+            }
+
+        }
+    }
+}
