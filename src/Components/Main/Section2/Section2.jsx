@@ -6,7 +6,9 @@ const Section2 = () => {
     <div className="section2">
       <div className="container">
         <p className="section2__title">Чехлы</p>
-        <Card1 />
+        <div className="fiz" >
+          <Card1 />
+        </div>
       </div>
     </div>
   );

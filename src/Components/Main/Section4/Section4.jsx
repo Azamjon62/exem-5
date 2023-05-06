@@ -1,4 +1,4 @@
-import Card2 from "../../../cards/Card2/Card2";
+import Card4 from "../../../cards/Card4/Card4";
 
 const Section4 = () => {
   return (
@@ -6,7 +6,9 @@ const Section4 = () => {
       <div className="section2">
         <div className="container">
           <p className="section2__title">Беспроводные наушники</p>
-          <Card2 />
+          <div className="fiz" >
+            <Card4 />
+          </div>
         </div>
       </div>
     </div>

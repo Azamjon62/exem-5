@@ -18,7 +18,7 @@ const Footer = () => {
 
             <ul className="ul" >
               <li><a href="#">Избранное</a></li>
-              <li><a href="#">Корзина</a></li>
+              <li><NavLink to="/selected">Корзина</NavLink></li>
               <li><NavLink to="/contacts">Контакты</NavLink></li>
             </ul>
 
@@ -30,9 +30,9 @@ const Footer = () => {
 
               <div className="language" >
                 <img src={img10} alt="world-icon" />
-                <p>Каз</p>
-                <p>Рус</p>
-                <p>Eng</p>
+                <p> <a href="#">Каз</a></p>
+                <p> <a href="#">Рус</a></p>
+                <p> <a href="#">Eng</a></p>
               </div>
 
             </div>

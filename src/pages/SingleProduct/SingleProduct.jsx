@@ -24,7 +24,9 @@ const SingleProduct = () => {
               <NavLink to="/products" >
                 <button className="action1" >Купить!</button>
               </NavLink>
-              <button className="action2" ><img src={icon7} alt="" />Добавить в корзину</button>
+              <NavLink to="/selected" >
+                <button className="action2" ><img src={icon7} alt="" />Добавить в корзину</button>
+              </NavLink>
             </div>
           </div>
         </div>

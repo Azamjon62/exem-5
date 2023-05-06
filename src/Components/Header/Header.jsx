@@ -25,11 +25,11 @@ const Header = () => {
 
           <div className="flex__selected">
             <div className="heart">
-              <img src={img3} alt="heart" /><sup>2</sup>
+              <img src={img3} alt="heart" /><sup>0</sup>
             </div>
             <NavLink to="/selected" >
               <div className="basket">
-                <img src={img4} alt="vector" /><sup>1</sup>
+                <img src={img4} alt="vector" /><sup>0</sup>
               </div>
             </NavLink>
           </div>

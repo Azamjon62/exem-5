@@ -8,12 +8,13 @@ import SingleProduct from "./pages/SingleProduct/SingleProduct";
 import Basket from "./pages/Basket/Basket";
 import EmptyBasket from "./pages/EmptyBasket/EmptyBasket";
 import Checkout from "./pages/Checkout/Checkout";
+import OrderIsProcessed from "./pages/OrderIsProcessed/OrderIsProcessed";
 
 function App() {
   return (
     <>
       <Header />
-
+      
       <main>
         <Routes>
           <Route path="/" element={<AllSection />} />
@@ -24,6 +25,7 @@ function App() {
           <Route path="/products" element={<Basket />} />
           <Route path="/selected" element={<EmptyBasket />} />
           <Route path="/ordering" element={<Checkout />} /> 
+          <Route path="/ordered" element={<OrderIsProcessed />} /> 
         </Routes>
       </main>
 

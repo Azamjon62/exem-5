@@ -17,6 +17,8 @@
 
         &__heart
         {
+            cursor: default;
+            z-index: 999;
             position: absolute;
             top: 15px;
             left: 22px;
@@ -25,7 +27,14 @@
 
         &__img
         {
-            margin-top: 15px;
+            margin-top: 22px;
+            img
+            {
+
+                width: 219.61px;
+                height: 237.45px;
+                
+            }
         }
 
 
