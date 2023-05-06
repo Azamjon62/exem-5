@@ -6,8 +6,49 @@ import icon12 from "../../assets/img/icon12.svg";
 import icon13 from "../../assets/img/icon13.svg";
 import { NavLink } from "react-router-dom";
 
+import { useEffect } from "react";
+import postsApi from "../../api/posts";
+import { useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+
 
 const Checkout = () => {
+
+    const { id } = useParams();
+    const dispatch = useDispatch();
+    const { postItem, data } = useSelector((res) => res);
+
+    useEffect(() => {
+      postsApi
+        .getItem(id)
+        .then((res) => {
+          dispatch({
+            type: "ITEM",
+            payload: res.data,
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, [dispatch, id]);
+
+    console.log(postItem);
+    console.log(data);
+
+    // const [checking, setChecking] = useState("Uzbekistan");
+
+    // const check = (evt) => {
+    //   const value = setChecking(evt.target.value);
+
+    //   console.log(evt);
+    //   console.log(value);
+    //   // if (value.length) {
+    //   //   console.log("good");
+    //   // } else {
+    //   //   alert("bad");
+    //   // }
+    // }
+
   return (
     <div className="checkout">
       <div className="container">
@@ -36,6 +77,8 @@ const Checkout = () => {
                       name="city"
                       id="city"
                       placeholder="Город"
+                      required
+                      // value={checking}
                     />
                     <img src={icon11} alt="pen" />
                   </label>
@@ -46,6 +89,7 @@ const Checkout = () => {
                       name="city"
                       id="road"
                       placeholder="Улица / Район"
+                      required
                     />
                     <img src={icon11} alt="pen" />
                   </label>
@@ -57,6 +101,7 @@ const Checkout = () => {
                         name="home"
                         id="home"
                         placeholder="Дом"
+                        
                       />
                       <img src={icon11} alt="pen" />
                     </label>
@@ -67,6 +112,7 @@ const Checkout = () => {
                         name="entrance"
                         id="entrance"
                         placeholder="Подъезд"
+                        
                       />
                       <img src={icon11} alt="pen" />
                     </label>
@@ -77,7 +123,8 @@ const Checkout = () => {
                       type="text"
                       name="entrance"
                       id="entrance"
-                      placeholder="Подъезд"
+                      placeholder="Квартира"
+                      
                     />
                     <img src={icon11} alt="pen" />
                   </label>
@@ -91,45 +138,63 @@ const Checkout = () => {
                 <div className="checkout__section__flex__yourOrder__wrapper__flex">
                   <div className="checkout__section__flex__yourOrder__wrapper__flex__prices">
                     <div className="checkout__section__flex__yourOrder__wrapper__flex__prices__much">
-                      <span>1х</span>
-                      <span>Наушники Apple BYZ S852I</span>
+                      <span>{data[data.length - 1]?.number}х</span>
+                      <span title={postItem?.title} >{postItem?.title.slice(0, 28)}</span>
                     </div>
-                    <span>₸ 2 927</span>
+                    <span>₸ {postItem?.price}</span>
                   </div>
 
                   <div className="checkout__section__flex__yourOrder__wrapper__flex__prices">
                     <p>Доставка</p>
-                    <span>₸ 2 927</span>
+                    <span>₸ 499</span>
                   </div>
                   <div className="checkout__section__flex__yourOrder__wrapper__flex__prices">
                     <p>К оплате</p>
-                    <span>₸ 2 927</span>
+                    <span>₸ {data[data.length - 1]?.toPay}</span>
                   </div>
                 </div>
               </div>
               {/* ------------ */}
               <div className="checkout__section__flex__yourOrder__wrapper2">
                 <h3>Способ оплаты</h3>
-                <div className="baz" >
+                <div className="baz">
                   <img src={icon12} alt="ic" />
                   <p>Счет на kaspi.kz</p>
                 </div>
                 <label className="bar" htmlFor="promo-code">
                   <img src={icon13} alt="ico" />
-                  <input type="text" name="text" id="promo-code" placeholder="Есть промокод?" />
+                  <input
+                    type="text"
+                    name="text"
+                    id="promo-code"
+                    placeholder="Есть промокод?"
+                    required
+                  />
                 </label>
               </div>
               {/* -------------- */}
-              <div className="checkout__section__flex__yourOrder__wrapper3" >
+              <div className="checkout__section__flex__yourOrder__wrapper3">
                 <h3>Номер получателя</h3>
                 <label className="label3" htmlFor="phone">
-                    <input type="tel" name="phone number" id="phone" placeholder="+7 ___ ___ __ __" />
-                    <img src={icon11} alt="pencil" />
+                  <input
+                    type="tel"
+                    name="phone number"
+                    id="phone"
+                    placeholder="+7 ___ ___ __ __"
+                    required
+                  />
+                  <img src={icon11} alt="pencil" />
                 </label>
               </div>
               {/* -------------- */}
-              <NavLink to="/ordered" >
-                <button className="checkout__section__flex__yourOrder__finish" >Закончить оформление</button>
+              <NavLink to="/ordered">
+                <button
+                  // onClick={check}
+                  type="submit"
+                  className="checkout__section__flex__yourOrder__finish"
+                >
+                  Закончить оформление
+                </button>
               </NavLink>
             </div>
           </div>

@@ -11,7 +11,14 @@ import { NavLink } from "react-router-dom";
 const Card2 = () => {
   const dispatch = useDispatch();
   const { post } = useSelector((res) => res);
+  const [likes, setLikes] = useState([]);
 
+  const checkCard = (id) => {
+    const checkLikes = likes.map((likes) => likes == id);
+
+    console.log(checkLikes);
+  };
+  console.log(likes);
   useEffect(() => {
     postApi
       .getAll()
@@ -29,29 +36,33 @@ const Card2 = () => {
         });
       });
   }, []);
-  const [heart, setHeart] = useState(true);
+
+  // const [heart, setHeart] = useState(true);
 
   return post.slice(10, 16).map((item) => {
     return (
       <div className="card2" key={item.id}>
         <div
           onClick={() => {
-            heart ? setHeart(false) : setHeart(true);
+            setLikes([...likes, item.id]);
           }}
           className="card2__wrapper__heart"
         >
-          <img
-            style={{ display: `${heart ? "block" : "none"}` }}
-            src={img9}
-            alt="her"
-          />
-          <img
-            style={{ display: `${heart ? "none" : "block"}` }}
-            src={icon14}
-            alt="he"
-          />
+          {checkCard(item.id) ? (
+            <img
+              // style={{ display: `${heart ? "none" : "block"}` }}
+              src={icon14}
+              alt="he"
+            />
+          ) : (
+            <img
+              // style={{ display: `${heart ? "block" : "none"}` }}
+              src={img9}
+              alt="her"
+            />
+          )}
         </div>
-        <NavLink to="/single-product">
+        <NavLink to={`/single-product/${item.id}`}>
           <div>
             <div className="card2__wrapper">
               <div className="card2__wrapper__img">

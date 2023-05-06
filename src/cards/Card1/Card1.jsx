@@ -30,9 +30,9 @@ const Card1 = () => {
   return post.slice(0, 3).map((item) => {
     return (
       <div className="card1" key={item.id}>
-        <NavLink to="/single-product" className="card1__flex">
+        <NavLink to={`/single-product/${item.id}`} className="card1__flex">
           <img src={item.image} alt="phone" />
-          <p title={item.title} >{item.title.slice(0, 11)}</p>
+          <p title={item.title}>{item.title.slice(0, 11)}</p>
         </NavLink>
       </div>
     );

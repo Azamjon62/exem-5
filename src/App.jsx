@@ -22,9 +22,9 @@ function App() {
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/single-product/:id" element={<SingleProduct />} />
           <Route path="/single-product" element={<SingleProduct />} />
-          <Route path="/products" element={<Basket />} />
+          <Route path="/products/:id" element={<Basket />} />
           <Route path="/selected" element={<EmptyBasket />} />
-          <Route path="/ordering" element={<Checkout />} /> 
+          <Route path="/ordering/:id" element={<Checkout />} /> 
           <Route path="/ordered" element={<OrderIsProcessed />} /> 
         </Routes>
       </main>

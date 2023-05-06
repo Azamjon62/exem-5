@@ -3,13 +3,43 @@ import "./index.scss";
 import icon7 from "../../assets/img/icon7.svg";
 import { NavLink } from "react-router-dom";
 
+import { useEffect, useState } from "react";
+import postsApi from "../../api/posts";
+import { useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+
 const SingleProduct = () => {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { postItem } = useSelector((res) => res);
+
+
+  useEffect(() => {
+    postsApi
+      .getItem(id)
+      .then((res) => {
+        dispatch({
+          type: "ITEM",
+          payload: res.data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [id]);
+
+  console.log(postItem);
+  
+  const [ modal, setModal ] = useState(true);
+  const [ saved, setSaved ] = useState(true);
+
+
   return (
     <div className="singleProduct">
       <div className="container">
         <div className="singleProduct__section">
           <div className="singleProduct__section__title">
-            <p>Автодержатель</p>
+            <p>Автодержатель </p>
           </div>
           {/* ---------------------------------- */}
           <div>
@@ -17,15 +47,39 @@ const SingleProduct = () => {
           </div>
           {/* ---------------------------------- */}
           <div className="singleProduct__section__flex">
-            <div className="singleProduct__section__flex__select">
-              <p>Описание и характеристики</p>
+            <div
+              className="singleProduct__section__flex__select"
+              onClick={() => {
+                modal ? setModal(false) : setModal(true);
+              }}
+            >
+              <div className="singleProduct__section__flex__select__modal">
+                <p>Описание и характеристики</p>
+              </div>
+              <p
+                className="singleProduct__section__flex__select__p"
+                style={{
+                  display: `${modal ? "none" : "block"}`,
+                }}
+              >
+                {postItem?.description}
+              </p>
             </div>
+
             <div className="singleProduct__section__flex__btn">
-              <NavLink to="/products" >
-                <button className="action1" >Купить!</button>
+              <NavLink to={`/products/${id}`}>
+                <button className="action1">Купить!</button>
               </NavLink>
-              <NavLink to="/selected" >
-                <button className="action2" ><img src={icon7} alt="" />Добавить в корзину</button>
+              <NavLink>
+                <button
+                  onClick={() => {
+                    saved ? setSaved(false) : setSaved(true);
+                  }}
+                  className="action2"
+                >
+                  <img src={icon7} alt="" />
+                  {saved ? "Добавить в корзину" : "Добавлен"}
+                </button>
               </NavLink>
             </div>
           </div>
@@ -33,6 +87,6 @@ const SingleProduct = () => {
       </div>
     </div>
   );
-}
+};
 
-export default SingleProduct
+export default SingleProduct;
