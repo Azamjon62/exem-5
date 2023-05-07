@@ -98,11 +98,56 @@
 
                 &__select 
                 {
+                    background: #fff;
+                    width: 350px;
+                    top: 0;
+                    right: 0;
+                    padding: 25px ;
+                    height: 300px;
+                    z-index: 999;
+                    position: absolute;
                     color: #101010;
                     cursor: pointer;
-                    display: none;
-                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
                     gap: 10px;
+
+                    .gap
+                    {
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                    }
+
+                    .dropdown
+                    {
+                        margin-top: 20px;
+                    }
+
+
+                    &__footer
+                    {
+                        margin-top: 20px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        
+                        .ul
+                        {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 18px;
+                        }
+
+                        .language
+                        {
+                            display: flex;
+                            align-items: center;
+                            gap: 12px;
+                        }
+                    }
+
 
                 }
             }
@@ -142,6 +187,7 @@
 
                 &__toggle
                 {
+                    cursor: pointer;
                     display: block;
                 }
 

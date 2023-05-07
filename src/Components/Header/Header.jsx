@@ -1,5 +1,6 @@
 import "./index.scss";
 import img1 from "../../assets/img/img1.svg";
+import img10 from "../../assets/img/img10.svg";
 import icon15 from "../../assets/img/icon15.svg";
 // import img2 from "../../assets/img/img2.svg";
 import img3 from "../../assets/img/img3.svg";
@@ -13,6 +14,7 @@ import postApi from "../../api/posts";
 import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
 import { useState } from "react";
+
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -47,6 +49,9 @@ const Header = () => {
     setOpen(flag);
   };
 
+  const [toggle, setToggle] = useState(true);
+
+  console.log(toggle);
   return (
     <div className="header">
       <div className="container">
@@ -55,21 +60,6 @@ const Header = () => {
             <NavLink to="/">
               <h1>QPICK</h1>
             </NavLink>
-
-            <Dropdown
-              className="flex__logo__select"
-              menu={information}
-              onOpenChange={handleOpenChange}
-              open={open}
-            >
-              <a onClick={(e) => e.preventDefault()}>
-                <img src={img1} alt="p" />
-                <Space>
-                  Выбрать модель телефона
-                  <DownOutlined />
-                </Space>
-              </a>
-            </Dropdown>
           </div>
 
           <div className="flex__selected">
@@ -83,8 +73,57 @@ const Header = () => {
                 <sup>0</sup>
               </div>
             </NavLink>
-            <div className="flex__selected__toggle">
+            <div
+              className="flex__selected__toggle"
+              onClick={() => (toggle ? setToggle(false) : setToggle(true))}
+            >
               <img src={icon15} alt="" />
+            </div>
+
+            <div
+              className="flex__logo__select"
+              style={{
+                display: `${toggle ? "none" : "flex"}`,
+              }}
+            >
+              <h2 onClick={
+                () => (toggle? setToggle(false) : setToggle(true))
+              } 
+                style={{
+                  display: `${toggle ? "none" : "flex"}`,
+                }}
+              >
+                Close
+              </h2>
+              <Dropdown
+                className="dropdown"
+                menu={information}
+                onOpenChange={handleOpenChange}
+                open={open}
+              >
+                <a className="gap" onClick={(e) => e.preventDefault()}>
+                  <img src={img1} alt="p" />
+                  <Space>
+                    Выбрать модель телефона
+                    <DownOutlined />
+                  </Space>
+                </a>
+              </Dropdown>
+
+                <div className="flex__logo__select__footer " >
+                  <ul className="ul" >
+                    <li><a href="#">Избранное </a></li>
+                    <li><NavLink to="/service-requirements">Условия сервиса</NavLink></li>
+                    <li><NavLink to="/contacts">Контакты</NavLink></li>
+                  </ul>
+                  <div className="language" >
+                    <img src={img10} alt="world" />
+                    <a href="#">Каз</a>
+                    <a href="#">Рус</a>
+                    <a href="#">Eng</a>
+                  </div>
+                </div>
+
             </div>
           </div>
         </div>
