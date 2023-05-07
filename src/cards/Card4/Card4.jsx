@@ -1,4 +1,3 @@
-import "./index.scss";
 import img8 from "../../assets/img/img8.svg";
 import img9 from "../../assets/img/img9.svg";
 import icon14 from "../../assets/img/icon14.svg";
