@@ -11,14 +11,7 @@ import { NavLink } from "react-router-dom";
 const Card2 = () => {
   const dispatch = useDispatch();
   const { post } = useSelector((res) => res);
-  const [likes, setLikes] = useState([]);
 
-  const checkCard = (id) => {
-    const checkLikes = likes.map((likes) => likes == id);
-
-    console.log(checkLikes);
-  };
-  console.log(likes);
   useEffect(() => {
     postApi
       .getAll()
@@ -27,7 +20,6 @@ const Card2 = () => {
           type: "GET_ALL",
           payload: res.data,
         });
-        console.log(res);
       })
       .catch((err) => {
         dispatch({
@@ -37,30 +29,27 @@ const Card2 = () => {
       });
   }, []);
 
-  // const [heart, setHeart] = useState(true);
+  const [heart, setHeart] = useState(true);
 
   return post.slice(10, 16).map((item) => {
     return (
       <div className="card2" key={item.id}>
         <div
           onClick={() => {
-            setLikes([...likes, item.id]);
+            heart ? setHeart(false) : setHeart(true);
           }}
           className="card2__wrapper__heart"
         >
-          {checkCard(item.id) ? (
-            <img
-              // style={{ display: `${heart ? "none" : "block"}` }}
-              src={icon14}
-              alt="he"
-            />
-          ) : (
-            <img
-              // style={{ display: `${heart ? "block" : "none"}` }}
-              src={img9}
-              alt="her"
-            />
-          )}
+          <img
+            style={{ display: `${heart ? "none" : "block"}` }}
+            src={icon14}
+            alt="he"
+          />
+          <img
+            style={{ display: `${heart ? "block" : "none"}` }}
+            src={img9}
+            alt="her"
+          />
         </div>
         <NavLink to={`/single-product/${item.id}`}>
           <div>
@@ -72,7 +61,9 @@ const Card2 = () => {
                 <h3>{item.title.slice(0, 20)}</h3>
                 <div className="card2__wrapper__title__flex">
                   <p>{item.price} ₸</p>
-                  <p className="p">3527 ₸</p>
+                  <div>
+                    <p className="p">3527 ₸</p>
+                  </div>
                 </div>
               </div>
               <p className="card2__wrapper__evaluation">

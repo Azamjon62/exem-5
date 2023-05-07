@@ -26,7 +26,9 @@ const Contacts = () => {
                 <img src={icon5} alt="" />
                 <div className="contact__card__flex__map__address__flex" >
                   <p>Аксай-3а, 62ф, Алматы, Казахстан</p>
-                  <p className="small-p" >3 этаж 35 кабинет</p>
+                  <div>
+                    <p className="small-p" >3 этаж 35 кабинет</p>
+                  </div>
                 </div>
               </div>
             </div>

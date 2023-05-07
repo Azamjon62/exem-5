@@ -86,17 +86,15 @@ const Basket = () => {
                 {/* ----------------------------------------------- */}
                 <div className="basket__section__flex__wrapper__card1__count">
                   <div className="basket__section__flex__wrapper__card1__count__flex">
-                    <span onClick={decrement} >
+                    <span onClick={decrement}>
                       <img src={icon9} alt="minus" />
                     </span>
                     <h3>{count}</h3>
-                    <span onClick={increment} >
+                    <span onClick={increment}>
                       <img src={icon8} alt="plus" />
                     </span>
                   </div>
-                  <p className="to-price"> {
-                    allCounts
-                  } ₸</p>
+                  <p className="to-price"> {allCounts} ₸</p>
                 </div>
               </div>
               {/* --------------------------------------------------- */}
@@ -120,7 +118,9 @@ const Basket = () => {
             <div className="basket__section__flex__total">
               <div className="basket__section__flex__total__flex">
                 <p>ИТОГО</p>
-                <p>₸ {allCounts + 499}</p>
+                <div>
+                  <p>₸ {allCounts + 499}</p>
+                </div>
               </div>
               <NavLink to={`/ordering/${id}`}>
                 <button className="basket__section__flex__total-btn">

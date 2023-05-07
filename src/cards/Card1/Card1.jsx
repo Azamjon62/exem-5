@@ -16,7 +16,6 @@ const Card1 = () => {
           type: "GET_ALL",
           payload: res.data,
         });
-        console.log(res);
       })
       .catch((err) => {
         dispatch({

@@ -20,7 +20,6 @@ const Card2 = () => {
           type: "GET_ALL",
           payload: res.data,
         });
-        console.log(res);
       })
       .catch((err) => {
         dispatch({
@@ -62,7 +61,9 @@ const Card2 = () => {
                 <h3>{item.title.slice(0, 20)}</h3>
                 <div className="card2__wrapper__title__flex">
                   <p>{item.price} ₸</p>
-                  <p className="p">3527 ₸</p>
+                  <div>
+                    <p className="p">3527 ₸</p>
+                  </div>
                 </div>
               </div>
               <p className="card2__wrapper__evaluation">

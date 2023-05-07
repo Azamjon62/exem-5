@@ -31,7 +31,7 @@ const Footer = () => {
               <div className="language" >
                 <img src={img10} alt="world-icon" />
                 <p> <a href="#">Каз</a></p>
-                <p> <a href="#">Рус</a></p>
+                <span> <a href="#">Рус</a></span>
                 <p> <a href="#">Eng</a></p>
               </div>
 

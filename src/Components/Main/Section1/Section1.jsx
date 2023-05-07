@@ -6,7 +6,7 @@ const section1 = () => {
     <div className="section1">
       <div className="container">
         <div className="wrapper" >
-          <h1>Аксессуары для <br /> Iphone 13 Pro Max</h1>
+          <h1>Аксессуары для Iphone 13 Pro Max</h1>
           <img src={img5} alt="" />
         </div>
       </div>

@@ -23,6 +23,7 @@
                 display: flex;
                 align-items: center;
                 gap: 10px;
+
             }
         }
         &__selected 
@@ -57,6 +58,94 @@
                     background: #FFA542;
                     color: #fff;
                 }
+            }
+
+
+            &__toggle
+            {
+                display: none;
+            }
+
+        }
+    }
+}
+
+
+// --------------------------------------------------
+
+
+@media screen and (max-width: 428px) {
+    .header
+    {
+        max-width: 390px;
+        margin: 0 auto;
+        .flex {
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &__logo
+            {
+
+                display: flex;
+                gap: 75px;
+
+                a
+                {
+                    color: #101010;  
+                }
+
+                &__select 
+                {
+                    color: #101010;
+                    cursor: pointer;
+                    display: none;
+                    align-items: center;
+                    gap: 10px;
+
+                }
+            }
+            &__selected 
+            {
+                display: flex;
+                align-items: center;
+                gap: 40px;
+
+                .heart, .basket
+                {
+                    cursor: pointer;
+                    position: relative;
+
+                    img
+                    {
+                        width: 23.2px;
+                        height: 23.2px;
+                    }
+
+                    sup {
+                        position: absolute;
+                        border-radius: 50%;
+                        font-weight: 500;
+                        font-size: 15px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        top: -8px;
+                        left: 16px;
+                        width: 20px;
+                        height: 20px;
+                        background: #FFA542;
+                        color: #fff;
+                    }
+                }
+
+                &__toggle
+                {
+                    display: block;
+                }
+
+
             }
         }
     }
