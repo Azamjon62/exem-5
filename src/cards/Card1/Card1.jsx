@@ -25,7 +25,6 @@ const Card1 = () => {
       });
   }, []);
 
-
   return post.slice(0, 3).map((item) => {
     return (
       <div className="card1" key={item.id}>

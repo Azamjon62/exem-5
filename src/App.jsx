@@ -14,18 +14,18 @@ function App() {
   return (
     <>
       <Header />
-      
+
       <main>
         <Routes>
           <Route path="/" element={<AllSection />} />
-          <Route path="/service-requirements" element={<ServiceRequirements />} />
+          <Route path="/service-requirements" element={<ServiceRequirements />}/>
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/single-product/:id" element={<SingleProduct />} />
           <Route path="/single-product" element={<SingleProduct />} />
           <Route path="/products/:id" element={<Basket />} />
           <Route path="/selected" element={<EmptyBasket />} />
-          <Route path="/ordering/:id" element={<Checkout />} /> 
-          <Route path="/ordered" element={<OrderIsProcessed />} /> 
+          <Route path="/ordering/:id" element={<Checkout />} />
+          <Route path="/ordered" element={<OrderIsProcessed />} />
         </Routes>
       </main>
 

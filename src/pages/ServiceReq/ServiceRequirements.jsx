@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "./index.scss"
+import "./index.scss";
 
 const ServiceRequirements = () => {
   return (
@@ -51,6 +51,6 @@ const ServiceRequirements = () => {
       </div>
     </div>
   );
-}
+};
 
-export default ServiceRequirements
+export default ServiceRequirements;

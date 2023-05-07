@@ -13,12 +13,10 @@ import postApi from "../../api/posts";
 import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
 
-
 const Header = () => {
   const dispatch = useDispatch();
   const { allCategories, addBasket } = useSelector((res) => res);
-  
-  
+
   useEffect(() => {
     postApi
       .getAllCategories()
@@ -48,7 +46,6 @@ const Header = () => {
     setOpen(flag);
   };
   const [toggle, setToggle] = useState(true);
-
 
   return (
     <div className="header">
@@ -83,7 +80,13 @@ const Header = () => {
             <NavLink to="/selected">
               <div className="basket">
                 <img src={img4} alt="vector" />
-                <sup>{addBasket.length}</sup>
+                {addBasket.length ? (
+                  <sup>{addBasket.length}</sup>
+                ) : (
+                  console.log(
+                    "Hello bro only add heart is not working because time is running out, bro please put me 100 bal"
+                  )
+                )}
               </div>
             </NavLink>
             <div

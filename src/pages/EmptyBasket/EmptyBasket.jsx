@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import img18 from "../../assets/img/img18.svg"
+import img18 from "../../assets/img/img18.svg";
 import icon14 from "../../assets/img/icon14.svg";
 import icon16 from "../../assets/img/icon16.svg";
 import img9 from "../../assets/img/img9.svg";
@@ -71,14 +71,16 @@ const EmptyBasket = () => {
                               </div>
                             </div>
                             <div className="card2__wrapper__evaluation">
-                              <div className="star" >
+                              <div className="star">
                                 <img src={img8} alt="star" />{" "}
                                 <p>{item.rating.rate}</p>
                               </div>
-                              <div onClick={(evt) => {
-                                evt.preventDefault()
-                                handleDelete(item.id)
-                              }} >
+                              <div
+                                onClick={(evt) => {
+                                  evt.preventDefault();
+                                  handleDelete(item.id);
+                                }}
+                              >
                                 <img src={icon16} alt="deleteItem" />
                               </div>
                             </div>

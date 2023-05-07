@@ -12,7 +12,7 @@ import { useParams } from "react-router-dom";
 const SingleProduct = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { postItem} = useSelector((res) => res);
+  const { postItem } = useSelector((res) => res);
 
   useEffect(() => {
     postsApi
@@ -28,11 +28,8 @@ const SingleProduct = () => {
       });
   }, [id]);
 
-  console.log(postItem);
-  
-  const [ modal, setModal ] = useState(true);
-  const [ saved, setSaved ] = useState(true);
-
+  const [modal, setModal] = useState(true);
+  const [saved, setSaved] = useState(true);
 
   return (
     <div className="singleProduct">
@@ -77,7 +74,6 @@ const SingleProduct = () => {
               </NavLink>
               <NavLink>
                 <button
-
                   onClick={() => {
                     saved ? setSaved(false) : setSaved(true);
                     dispatch({
@@ -85,7 +81,7 @@ const SingleProduct = () => {
                       payload: postItem,
                     });
                   }}
-                  disabled={ saved ?  false : true}
+                  disabled={saved ? false : true}
                   className="action2"
                 >
                   <img src={icon7} alt="" />

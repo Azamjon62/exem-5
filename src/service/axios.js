@@ -1,5 +1,5 @@
-import axios from "axios"
+import axios from "axios";
 
 axios.defaults.baseURL = "https://fakestoreapi.com";
 
-export default axios
+export default axios;

@@ -1,4 +1,4 @@
-import "./index.scss"
+import "./index.scss";
 import icon5 from "../../assets/img/icon5.svg";
 import icon11 from "../../assets/img/icon11.svg";
 import icon12 from "../../assets/img/icon12.svg";
@@ -10,43 +10,24 @@ import postsApi from "../../api/posts";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
-
 const Checkout = () => {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { postItem, data } = useSelector((res) => res);
 
-    const { id } = useParams();
-    const dispatch = useDispatch();
-    const { postItem, data } = useSelector((res) => res);
-
-    useEffect(() => {
-      postsApi
-        .getItem(id)
-        .then((res) => {
-          dispatch({
-            type: "ITEM",
-            payload: res.data,
-          });
-        })
-        .catch((err) => {
-          console.log(err);
+  useEffect(() => {
+    postsApi
+      .getItem(id)
+      .then((res) => {
+        dispatch({
+          type: "ITEM",
+          payload: res.data,
         });
-    }, [dispatch, id]);
-
-    console.log(postItem);
-    console.log(data);
-
-    // const [checking, setChecking] = useState("Uzbekistan");
-
-    // const check = (evt) => {
-    //   const value = setChecking(evt.target.value);
-
-    //   console.log(evt);
-    //   console.log(value);
-    //   // if (value.length) {
-    //   //   console.log("good");
-    //   // } else {
-    //   //   alert("bad");
-    //   // }
-    // }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [dispatch, id]);
 
   return (
     <div className="checkout">
@@ -66,7 +47,7 @@ const Checkout = () => {
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191884.8398711163!2d69.11455597569169!3d41.2827379463749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2z0KLQsNGI0LrQtdC90YIsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e0!3m2!1sru!2s!4v1683467486458!5m2!1sru!2s"
                   width="600"
                   height="450"
-                  style={{border:0}}
+                  style={{ border: 0 }}
                   allowfullscreen=""
                   loading="lazy"
                 ></iframe>

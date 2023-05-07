@@ -1,9 +1,7 @@
-
 import Card2 from "../../../cards/Card2/Card2";
-import "./index.scss"
+import "./index.scss";
 
 const Section3 = () => {
-
   return (
     <div className="section3">
       <div className="container">
@@ -14,6 +12,6 @@ const Section3 = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Section3
+export default Section3;

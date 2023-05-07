@@ -6,13 +6,13 @@ const Section4 = () => {
       <div className="section2">
         <div className="container">
           <p className="section2__title">Беспроводные наушники</p>
-          <div className="fiz" >
+          <div className="fiz">
             <Card4 />
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default Section4
+export default Section4;
