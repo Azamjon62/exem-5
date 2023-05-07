@@ -305,3 +305,328 @@
         }
     }
 }
+
+
+
+@media screen and (max-width: 428px) {
+    .checkout
+    {
+        max-width: 390px;
+        margin: 0 auto;
+
+        &__section
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__title
+            {
+                width: 100%;
+                text-align: left;
+                padding: 30px 0 12px 0;
+                p
+                {
+                    font-weight: 600;
+                    font-size: 20px;
+                    color: #1C1C27;
+                }
+            }
+
+            &__flex
+            {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+
+                &__courierDelivery
+                {
+                    margin-top: 12px;
+                    width: 390px;
+                    height: 513px;
+                    background: #FFFFFF;
+                    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+                    border-radius: 30px;
+                    padding: 23px 23.1px 32px 21.6px;
+
+                    &__text
+                    {
+                        display: flex;
+                        justify-content: space-between;
+
+                        p
+                        {
+                            font-weight: 600;
+                            font-size: 17px;
+                            color: #000000;
+                        }
+
+                        span
+                        {
+                            font-weight: 500;
+                            font-size: 15px;
+                            color: #000000;
+                        }
+                    }
+
+                    &__img
+                    {
+                        img
+                        {
+                            width: 349px;
+                            height: 146px;
+                        }
+                        margin-top: 20px;
+                    }
+
+                    &__location
+                    {
+                        margin-top: 20px;
+                        display: flex;
+                        align-items: center;
+                        gap: 11.52px;
+                    }
+
+                    &__inputs
+                    {
+                        margin-top: 16px;
+
+                        &__form
+                        {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 11.5px;
+
+                            .label1
+                            {
+                                background: #D6D6D6;
+                                border-radius: 15px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                gap: 15px;
+                                padding: 14px 16.66px 13px 14px;
+                                width: 100%;
+                                height: 45px;
+
+                                input
+                                {
+                                    border: none;
+                                    background: #D6D6D6;
+                                    outline: none;
+                                    width: 100%;
+                                }
+                            }
+
+                            &__flex
+                            {
+                                display: flex;
+                                justify-content: space-between;
+
+                                .label2
+                                {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    gap: 15px;
+                                    background: #D6D6D6;
+                                    border-radius: 15px;
+                                    width: 164.06px;
+                                    height: 45px;
+                                    padding: 14px;
+
+                                    input
+                                    {
+                                        width: 100px;
+                                        border: none;
+                                        background: #D6D6D6;
+                                        outline: none;
+                                    }
+                                }
+                            }
+
+                            .label2
+                            {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                gap: 15px;
+                                background: #D6D6D6;
+                                border-radius: 15px;
+                                width: 164.06px;
+                                height: 45px;
+                                padding: 14px;
+
+                                input
+                                {
+                                    width: 100px;
+                                    border: none;
+                                    background: #D6D6D6;
+                                    outline: none;
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+
+                &__yourOrder
+                {
+                    margin-top: 12px;
+                    &__wrapper
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        background: #FFFFFF;
+                        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+                        border-radius: 30px;
+                        width: 390px;
+                        height: 155px;
+
+                        .order-h3
+                        {
+                            padding: 15px 0 25px 20px;
+                        }
+
+                        &__flex
+                        {
+                            display: flex;
+                            flex-direction: column;
+                            padding: 0px 18px 0px 22.33px;    
+                            gap: 12px;
+
+
+                            &__prices
+                            {
+                                display: flex;
+                                justify-content: space-between;
+
+                                &__much
+                                {
+                                    display: flex;
+                                    gap: 14.52px;
+
+
+                                }
+
+                                p
+                                {
+                                    margin-left: 32.85px;
+                                }
+
+                                span
+                                {
+                                    font-weight: 500;
+                                    font-size: 15px;
+                                    color: #000000;
+                                }
+                            }
+                        }
+                    }
+
+                    &__wrapper2
+                    {
+                        margin-top: 14px;
+                        padding: 16px;
+                        width: 390px;
+                        height: 127px;
+                        background: #FFFFFF;
+                        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+                        border-radius: 30px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 17.5px;
+
+                        h3
+                        {
+                            font-weight: 600;
+                            font-size: 20px;
+                            color: #000000;
+                        }
+
+                        .baz
+                        {
+                            display: flex;
+                            align-items: center;
+                            gap: 9px;
+                        }
+
+                        .bar
+                        {
+                            display: flex;
+                            align-items: center;
+                            gap: 9px;
+
+
+                            input
+                            {
+                                border: none;
+                                outline: none;
+                            }
+                        }
+                    }
+
+                    &__wrapper3
+                    {
+                        margin-top: 20px;
+                        padding: 15px 10px 23px 13px;
+                        width: 390px;
+                        height: 124px;
+                        background: #FFFFFF;
+                        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+                        border-radius: 30px;
+
+                        h3
+                        {
+                            font-weight: 600;
+                            font-size: 17px;
+                            color: #000000;
+
+                        }
+
+                        .label3
+                        {
+                            margin-top: 20px;
+                            padding: 14px 13px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+                            height: 45px;
+                            background: #D6D6D6;
+                            border-radius: 15px;
+
+                            input
+                            {
+                                width: 350px;
+                                height: 35px;
+                                background: #D6D6D6;
+                                border: none;
+                                outline: none;
+                            }
+                        }
+                    }
+
+                    &__finish
+                    {
+                        margin-top: 28px;
+                        background: #101010;
+                        box-shadow: 0px 0px 20px rgba(67, 216, 84, 0.25);
+                        border-radius: 10px;
+                        border: none;
+                        width: 390px;
+                        height: 45px;
+                        color: #FFFFFF;
+                        font-weight: 500;
+                        font-size: 15px;
+                        margin-bottom: 20px;
+                    }
+
+                }
+            }
+        }
+    }
+
+}

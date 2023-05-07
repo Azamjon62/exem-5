@@ -138,7 +138,7 @@ const Checkout = () => {
                 <div className="checkout__section__flex__yourOrder__wrapper__flex">
                   <div className="checkout__section__flex__yourOrder__wrapper__flex__prices">
                     <div className="checkout__section__flex__yourOrder__wrapper__flex__prices__much">
-                      <span>{data[data.length - 1]?.number}х</span>
+                      <span>{data[data?.length - 1]?.number}х</span>
                       <span title={postItem?.title} >{postItem?.title.slice(0, 28)}</span>
                     </div>
                     <span>₸ {postItem?.price}</span>
@@ -150,7 +150,7 @@ const Checkout = () => {
                   </div>
                   <div className="checkout__section__flex__yourOrder__wrapper__flex__prices">
                     <p>К оплате</p>
-                    <span>₸ {data[data.length - 1]?.toPay}</span>
+                    <span>₸ {data[data?.length - 1]?.toPay}</span>
                   </div>
                 </div>
               </div>
