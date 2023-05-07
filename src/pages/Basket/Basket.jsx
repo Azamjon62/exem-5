@@ -97,7 +97,7 @@ const Basket = () => {
                   <p className="to-price"> {allCounts} ₸</p>
                 </div>
               </div>
-              {/* --------------------------------------------------- */}
+              {/* ----------------------------------------------------------------------------------------- */}
               <div className="basket__section__flex__wrapper__card2">
                 <div className="basket__section__flex__wrapper__card2__title">
                   <p>Доставка</p>
