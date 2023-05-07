@@ -1,5 +1,4 @@
 import "./index.scss"
-import img19 from "../../assets/img/img19.svg"
 import icon5 from "../../assets/img/icon5.svg";
 import icon11 from "../../assets/img/icon11.svg";
 import icon12 from "../../assets/img/icon12.svg";
@@ -63,7 +62,14 @@ const Checkout = () => {
                 <span> 499 ₸</span>
               </div>
               <div className="checkout__section__flex__courierDelivery__img">
-                <img src={img19} alt="map" />
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191884.8398711163!2d69.11455597569169!3d41.2827379463749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2z0KLQsNGI0LrQtdC90YIsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e0!3m2!1sru!2s!4v1683467486458!5m2!1sru!2s"
+                  width="600"
+                  height="450"
+                  style={{border:0}}
+                  allowfullscreen=""
+                  loading="lazy"
+                ></iframe>
               </div>
               <div className="checkout__section__flex__courierDelivery__location">
                 <img src={icon5} alt="location-icon" />
@@ -101,7 +107,6 @@ const Checkout = () => {
                         name="home"
                         id="home"
                         placeholder="Дом"
-                        
                       />
                       <img src={icon11} alt="pen" />
                     </label>
@@ -112,7 +117,6 @@ const Checkout = () => {
                         name="entrance"
                         id="entrance"
                         placeholder="Подъезд"
-                        
                       />
                       <img src={icon11} alt="pen" />
                     </label>
@@ -124,7 +128,6 @@ const Checkout = () => {
                       name="entrance"
                       id="entrance"
                       placeholder="Квартира"
-                      
                     />
                     <img src={icon11} alt="pen" />
                   </label>
@@ -139,7 +142,9 @@ const Checkout = () => {
                   <div className="checkout__section__flex__yourOrder__wrapper__flex__prices">
                     <div className="checkout__section__flex__yourOrder__wrapper__flex__prices__much">
                       <span>{data[data?.length - 1]?.number}х</span>
-                      <span title={postItem?.title} >{postItem?.title.slice(0, 28)}</span>
+                      <span title={postItem?.title}>
+                        {postItem?.title.slice(0, 28)}
+                      </span>
                     </div>
                     <span>₸ {postItem?.price}</span>
                   </div>

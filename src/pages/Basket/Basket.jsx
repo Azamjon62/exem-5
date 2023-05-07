@@ -1,5 +1,5 @@
 import "./index.scss";
-import img17 from "../../assets/img/img17.svg";
+// import img17 from "../../assets/img/img17.svg";
 import icon8 from "../../assets/img/icon8.svg";
 import icon9 from "../../assets/img/icon9.svg";
 import icon10 from "../../assets/img/icon10.svg";
@@ -103,7 +103,14 @@ const Basket = () => {
                   <p>Доставка</p>
                 </div>
                 <div className="basket__section__flex__wrapper__card2__img">
-                  <img src={img17} alt="map" />
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2998.072884043795!2d69.20123767547184!3d41.28551820230863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8ba578f4f58d%3A0xd7a2ecf23413b7a0!2sNajot%20Ta&#39;lim%20Chilonzor%20Filial!5e0!3m2!1sru!2s!4v1683466875874!5m2!1sru!2s"
+                    width="600"
+                    height="450"
+                    style={{border:0}}
+                    allowfullscreen=""
+                    loading="lazy"
+                  ></iframe>
                 </div>
                 <div className="basket__section__flex__wrapper__card2__ordering">
                   <div className="basket__section__flex__wrapper__card2__ordering__flex">

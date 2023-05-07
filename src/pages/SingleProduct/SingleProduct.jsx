@@ -14,7 +14,6 @@ const SingleProduct = () => {
   const dispatch = useDispatch();
   const { postItem } = useSelector((res) => res);
 
-
   useEffect(() => {
     postsApi
       .getItem(id)

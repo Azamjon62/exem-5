@@ -1,39 +1,57 @@
 .service-Requirements
-{
-    margin-top: 38px;
-    margin-bottom: 90px;
-    .serviceCard
     {
-        background: #fff;
-        width: 100%;
-        height: 162px;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 30px;
+        margin-top: 41px;
+        margin-bottom: 90px;
 
-        &__h3
+        &__flex
         {
-            font-weight: 600;
-            font-size: 17px;
-            color: #1C1C27;
-            padding: 15px 29.46px;
-        }
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            .serviceCard
+            {
+                background: #fff;
+                width: 100%;
+                height: 100%;
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+                border-radius: 30px;
 
-        &__p
-        {
-            font-weight: 400;
-            font-size: 17px;
-            line-height: 21px;
-            color: #000000;
-            padding: 0 31.57px 0 44.2px;
+                &__h3
+                {
+                    font-weight: 600;
+                    font-size: 17px;
+                    color: #1C1C27;
+                    padding: 15px 29.46px;
+                }
+
+                &__p
+                {
+                    font-weight: 400;
+                    font-size: 17px;
+                    line-height: 21px;
+                    color: #000000;
+                    padding: 0 31.57px 28px 44.2px;
+                }
+            }
+
+            &-btn
+            {
+                display: none;
+                width: 100%;
+                background: #101010;
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+                border-radius: 15px;
+                color: #fff;
+                font-weight: 600;
+                font-size: 17px;
+                padding: 22px 0;
+                border: none;
+                margin-bottom: 30px;
+            }
+
+
         }
     }
-
-    &-btn
-    {
-        display: none;
-    }
-}
-
 
 @media screen and (max-width: 428px) {
     .service-Requirements
@@ -90,10 +108,5 @@
 
 
         }
-
-
-
-
-
     }
 }

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./index.scss"
 
 const ServiceRequirements = () => {
@@ -41,7 +42,11 @@ const ServiceRequirements = () => {
               от всесторонне сбалансированных нововведений?
             </p>
           </div>
-          <button className="service-Requirements__flex-btn">На главную</button>
+          <NavLink to="/">
+            <button className="service-Requirements__flex-btn">
+              На главную
+            </button>
+          </NavLink>
         </div>
       </div>
     </div>
