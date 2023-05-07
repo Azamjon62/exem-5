@@ -7,6 +7,7 @@ const postsApi = {
   updateItem: async (ID) => axios.put(`/products/${ID}`),
   getAllCategories: async () => axios.get("/products/categories"),
   getItemCategories: async (ID) => axios.get(`/products/category/${ID}`)
+  
 };
 
 export default postsApi;

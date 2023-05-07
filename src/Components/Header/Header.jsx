@@ -16,8 +16,9 @@ import { Dropdown, Space } from "antd";
 
 const Header = () => {
   const dispatch = useDispatch();
-  const { allCategories } = useSelector((res) => res);
-
+  const { allCategories, addBasket } = useSelector((res) => res);
+  
+  
   useEffect(() => {
     postApi
       .getAllCategories()
@@ -82,7 +83,7 @@ const Header = () => {
             <NavLink to="/selected">
               <div className="basket">
                 <img src={img4} alt="vector" />
-                <sup>0</sup>
+                <sup>{addBasket.length}</sup>
               </div>
             </NavLink>
             <div

@@ -54,6 +54,18 @@
             }
         }
     }
+
+    &__body
+    {
+        &__card
+        {
+            display: flex;
+            align-items: center;
+            gap: 42px;
+            flex-wrap: wrap;
+            
+        }
+    }
 }
 
 

@@ -12,7 +12,7 @@ import { useParams } from "react-router-dom";
 const SingleProduct = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { postItem } = useSelector((res) => res);
+  const { postItem} = useSelector((res) => res);
 
   useEffect(() => {
     postsApi
@@ -77,9 +77,15 @@ const SingleProduct = () => {
               </NavLink>
               <NavLink>
                 <button
+
                   onClick={() => {
                     saved ? setSaved(false) : setSaved(true);
+                    dispatch({
+                      type: "ADD_BASKET",
+                      payload: postItem,
+                    });
                   }}
+                  disabled={ saved ?  false : true}
                   className="action2"
                 >
                   <img src={icon7} alt="" />
