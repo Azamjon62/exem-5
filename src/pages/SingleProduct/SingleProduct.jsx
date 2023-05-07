@@ -1,6 +1,7 @@
 import Card3 from "../../cards/Card3/Card3";
 import "./index.scss";
 import icon7 from "../../assets/img/icon7.svg";
+import img20 from "../../assets/img/img20.svg";
 import { NavLink } from "react-router-dom";
 
 import { useEffect, useState } from "react";
@@ -67,6 +68,11 @@ const SingleProduct = () => {
             </div>
 
             <div className="singleProduct__section__flex__btn">
+              <a className="singleProduct__section__flex__btn__a" href="#">
+                <button className="action">
+                  <img src={img20} alt="" />
+                </button>
+              </a>
               <NavLink to={`/products/${id}`}>
                 <button className="action1">Купить!</button>
               </NavLink>
@@ -78,7 +84,7 @@ const SingleProduct = () => {
                   className="action2"
                 >
                   <img src={icon7} alt="" />
-                  {saved ? "Добавить в корзину" : "Добавлен"}
+                  {saved ? <p>Добавить в корзину</p> : <p>Добавлен</p>}
                 </button>
               </NavLink>
             </div>

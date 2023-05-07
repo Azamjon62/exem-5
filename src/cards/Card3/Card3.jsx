@@ -43,7 +43,7 @@ const Card3 = () => {
             <img src={postItem?.image} alt="phone" />
           </div>
           <div className="card3__section__title">
-            <h2>{postItem?.title.slice(0, 30)}</h2>
+            <h3>{postItem?.title.slice(0, 30)}</h3>
             <div className="card3__section__title__price">
               <div className="card3__section__title__price__flex">
                 <p>{postItem?.price} ₸</p>
