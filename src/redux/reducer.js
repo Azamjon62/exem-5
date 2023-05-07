@@ -28,7 +28,8 @@ export const reducer = (state = INITIAL__STATE, action) => {
       return { ...state, itemCategory: action.payload };
     case "ADD_BASKET":
       return { ...state, addBasket: [...state.addBasket, action.payload] };
-
+    case "REMOVE_ITEM":
+      return { ...state, addBasket: state.addBasket.filter((item) => item.id !== action.payload) }
     default:
       return state;
   }

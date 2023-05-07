@@ -1,18 +1,31 @@
 import { NavLink } from "react-router-dom";
 import img18 from "../../assets/img/img18.svg"
 import icon14 from "../../assets/img/icon14.svg";
+import icon16 from "../../assets/img/icon16.svg";
 import img9 from "../../assets/img/img9.svg";
 import img8 from "../../assets/img/img8.svg";
 
 import "./index.scss";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 const EmptyBasket = () => {
   const { addBasket } = useSelector((res) => res);
+  const dispatch = useDispatch();
+
   console.log(addBasket);
 
+  const removeItem = (id) => {
+    return {
+      type: "REMOVE_ITEM",
+      payload: id,
+    };
+  };
+
   const [heart, setHeart] = useState(true);
+  const handleDelete = (id) => {
+    dispatch(removeItem(id));
+  };
 
   return (
     <div className="emptyBasket">
@@ -57,10 +70,18 @@ const EmptyBasket = () => {
                                 </div>
                               </div>
                             </div>
-                            <p className="card2__wrapper__evaluation">
-                              <img src={img8} alt="star" />{" "}
-                              <p>{item.rating.rate}</p>
-                            </p>
+                            <div className="card2__wrapper__evaluation">
+                              <div className="star" >
+                                <img src={img8} alt="star" />{" "}
+                                <p>{item.rating.rate}</p>
+                              </div>
+                              <div onClick={(evt) => {
+                                evt.preventDefault()
+                                handleDelete(item.id)
+                              }} >
+                                <img src={icon16} alt="deleteItem" />
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </NavLink>
